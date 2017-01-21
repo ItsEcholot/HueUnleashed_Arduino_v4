@@ -29,10 +29,10 @@
 PacketSerial serial;
 
 Aldi_NeoPixel ledStrip = Aldi_NeoPixel(NUMBER_OF_LEDS, 6, NEO_BRG + NEO_KHZ800);
-uint8_t ledState[NUMBER_OF_LEDS][3];
+volatile uint8_t ledState[NUMBER_OF_LEDS][3];
 
-uint8_t transitionTarget[NUMBER_OF_LEDS][3];
-uint8_t transitionSteps[NUMBER_OF_LEDS];
+volatile uint8_t transitionTarget[NUMBER_OF_LEDS][3];
+volatile uint8_t transitionSteps[NUMBER_OF_LEDS];
 
 bool colorFadeDone[3];
 bool gammaCorrectionEnabled;
